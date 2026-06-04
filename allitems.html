@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Everywear | Allitems</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            background-image: url('image/BgBall.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-color: #d5c5e0;
+            font-family: Arial, Helvetica, sans-serif; 
+            color: #000000;
+        }
+
+        .container { 
+            width: 95%; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        
+        /* --- Header Navigation --- */
+        .main-header { 
+            background-color: #000000b0; 
+            color: #ffffff; 
+            padding: 10px 0; 
+        }
+
+        .header-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 300px;
+        }
+
+        .header-nav { 
+            display: flex; 
+            gap: 30px; 
+        }
+
+        .header-nav a { 
+            font-size: 13px; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+        }
+
+        .logo-image { 
+            height: 80px; 
+            width: auto; 
+            display: block; 
+            transform: scale(1.5);
+        }
+
+        .contact-link-wrapper {
+            position: relative;
+        }
+
+        .contact-link-wrapper a {
+            position: absolute;
+            left: 30px; 
+            top: 0;
+            white-space: nowrap;
+        }
+
+        /* --- Cart Container --- */
+        .cart-wrapper { 
+            position: relative; 
+        }
+
+        .cart-counter { 
+            background-color: #ff0000; 
+            color: #ffffff; 
+            font-size: 10px; 
+            font-weight: bold; 
+            padding: 2px 6px; 
+            border-radius: 50%; 
+            position: absolute; 
+            top: -8px; 
+            right: -12px; 
+        }
+
+        /* --- Sorting Dropdown Style --- */
+        .sorting-container { 
+            display: flex; 
+            justify-content: flex-end; 
+            margin-top: 30px; 
+            padding: 0 10px; 
+        }
+
+        .sort-dropdown { 
+            padding: 8px 12px; 
+            font-size: 14px; 
+            color: #333333; 
+            background-color: #ffffff75; 
+            border: 1px solid #ffffff75; 
+            border-radius: 4px; 
+            cursor: pointer;    
+            outline: none; 
+        }
+
+        
+
+        /* --- Product Grid Section --- */
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 40px 20px; 
+            margin: 50px 0; 
+        }
+
+        .product-card { 
+            position: relative; 
+            text-align: center; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            background-color: #c89bcc; 
+            padding: 15px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        
+        /* --- Image Wrapper & Hover Effects --- */
+        .image-wrapper { 
+            width: 100%; 
+            height: 280px; 
+            background-image: url('image/Kicks.png'); 
+            background-color: #7e658472; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+            margin-bottom: 15px; 
+            border-radius: 8px;
+        }
+        
+        .image-wrapper a { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            width: 100%; 
+            height: 100%; 
+        }
+
+        .image-wrapper img { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: contain; 
+            transition: transform 0.4s ease; 
+        }
+
+        .image-wrapper:hover img { 
+            transform: scale(1.3); 
+            cursor: pointer;
+        }
+
+        /* --- Product Text  --- */
+        .product-category { 
+            font-size: 13px; 
+            color: #888888; 
+            margin-bottom: 5px; 
+        }
+
+        .product-title { 
+            font-size: 18px; 
+            font-weight: bold; 
+            color: #ffffff;
+            margin-bottom: 8px; 
+        }
+
+        .product-price { 
+            font-size: 14px; 
+        }
+        
+        .new-price { 
+            font-weight: bold; 
+            color: #fbfbfb; 
+            font-size: larger; 
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) { 
+            /* Tablet View */
+            .products-grid { grid-template-columns: repeat(2, 1fr); } 
+            .header-container { gap: 100px; } 
+        }
+
+        @media (max-width: 768px) { 
+            .header-container { gap: 50px; } 
+        }
+
+        @media (max-width: 550px) { 
+            /* Mobile View */
+            .products-grid { grid-template-columns: 1fr; } 
+            .image-wrapper { height: 250px; } 
+            
+            .header-container { gap: 20px; padding: 0 10px; } 
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 11px; white-space: nowrap; }
+            .logo-image { height: 50px; }
+        }
+    </style>
+</head>
+<body>
+            <!-- Nav bar -->
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <nav class="header-nav">
+                <a href="allitems.html">All Items</a>
+            </nav>
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="image/Kicks.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <a href="about.html">About</a>
+                <span class="contact-link-wrapper">
+                    <a href="contact.html">Contact</a>
+                </span>
+            </nav>
+
+        </div>
+    </header>
+    <!-- Product Sorting Dropdown -->
+    <main class="container">
+       <div class="sorting-container">
+            <select id="sortSelect" class="sort-dropdown">
+                <option value="default">Default</option>
+                <option value="low-to-high">Sort by price: low to high</option>
+                <option value="high-to-low">Sort by price: high to low</option>
+            </select>
+        </div>
+        <!--  Product Display Grid -->
+        <div id="productsGrid" class="products-grid">
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=j1chic">
+                        <img src="image/J1chic.webp" alt="Product Image">
+                    </a>
+                </div>
+
+                    <!-- Product Details  -->
+                <div class="product-info">
+                    <a href="product.html?id=j1chic">
+                        <div class="product-title">AIR JORDAN 1 RETRO HIGH OG</div>
+                    </a>
+                    <div class="product-price">
+                    
+                        <span class="new-price">₱6,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=j4">
+                        <img src="image/J4.webp" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=j4">
+                        <div class="product-title">Nike Air Jordan 4 Retro "Cozy Girl"</div>
+                    </a>
+                    <div class="product-price">
+                     
+                        <span class="new-price">₱8,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=lbj1">
+                        <img src="image/Lbj1.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=lbj1">
+                        <div class="product-title">LEBRON XXIII ELITE "GOOD INTENTIONS" EP</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱5,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=adi3">
+                        <img src="image/Adi3.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=adi3">
+                        <div class="product-title">Adidas NMD_R1 "Cloud White/Blue"</div>
+                    </a>
+                    <div class="product-price">
+                      
+                        <span class="new-price">₱2,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=book2">
+                        <img src="image/Book2.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=book2">
+                        <div class="product-title">Booker 2 NRG EP</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱5,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=af1">
+                        <img src="image/Af1.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=af1">
+                        <div class="product-title">Nike Air Force 1 '07 LV8 Denim</div>
+                    </a>
+                    <div class="product-price">
+                     
+                        <span class="new-price">₱3,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=gtcut">
+                        <img src="image/Gtcut5.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=gtcut">
+                        <div class="product-title">G.T. CUT 4 WNBA 30TH EP</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱6,300</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=adi4">
+                        <img src="image/Adi4.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=adi4">
+                        <div class="product-title">Adidas Forum XLG</div>
+                    </a>
+                    <div class="product-price">
+                      
+                        <span class="new-price">₱2,900</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=ja3">
+                        <img src="image/Ja3.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=ja3">
+                        <div class="product-title">Nike Ja 3 “Uncle Phil”</div>
+                    </a>
+                    <div class="product-price">
+                        
+                        <span class="new-price">₱3,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=adi5">
+                        <img src="image/Adi5.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=adi5">
+                        <div class="product-title">Adidas Gazelle Bold in "Pink Glow"</div>
+                    </a>
+                    <div class="product-price">
+                        
+                        <span class="new-price">₱3,200</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=lf1">
+                        <img src="image/Lf1.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=lf1">
+                        <div class="product-title">Nike Total 90 III SP</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱1,999</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=kobe">
+                        <img src="image/kobe8.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=kobe">
+                        <div class="product-title">Kobe 11 Protro Mamba Day</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱15,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=dunkpanda">
+                        <img src="image/Panda.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=dunkpanda">
+                        <div class="product-title">Nike Dunk Low "Panda"</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱5,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=yeezy350">
+                        <img src="image/Yeezy.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=yeezy350">
+                        <div class="product-title">Adidas Yeezy Boost 350 V2</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱12,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=nb550">
+                        <img src="image/Nb550.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=nb550">
+                        <div class="product-title">New Balance 550</div>
+                    </a>
+                    <div class="product-price">
+                         
+                        <span class="new-price">₱6,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=chuck70">
+                        <img src="image/Chuck.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=chuck70">
+                        <div class="product-title">Converse Chuck 70 Classic</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱4,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=pumasuede">
+                        <img src="image/Puma.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=pumasuede">
+                        <div class="product-title">Puma Suede Classic</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱3,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=vansoldskool">
+                        <img src="image/Vans.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=vansoldskool">
+                        <div class="product-title">Vans Old Skool</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱3,200</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=airmax90">
+                        <img src="image/Airmax.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=airmax90">
+                        <div class="product-title">Nike Air Max 90</div>
+                    </a>
+                    <div class="product-price">
+                        
+                        <span class="new-price">₱5,800</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=stansmith">
+                        <img src="image/Stansmith.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=stansmith">
+                        <div class="product-title">Adidas Stan Smith</div>
+                    </a>
+                    <div class="product-price">
+                         
+                        <span class="new-price">₱4,800</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=blazer77">
+                        <img src="image/Blazer.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=blazer77">
+                        <div class="product-title">Nike Blazer Mid '77</div>
+                    </a>
+                    <div class="product-price">
+                        
+                        <span class="new-price">₱5,200</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=asicsgel">
+                        <img src="image/Asics.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=asicsgel">
+                        <div class="product-title">Asics Gel-Kayano 14</div>
+                    </a>
+                    <div class="product-price">
+                       
+                        <span class="new-price">₱7,200</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=salomonxt6">
+                        <img src="image/Salomon.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=salomonxt6">
+                        <div class="product-title">Salomon XT-6</div>
+                    </a>
+                    <div class="product-price">
+                        
+                        <span class="new-price">₱9,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <a href="product.html?id=clubc85">
+                        <img src="image/Reebok.png" alt="Product Image">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <a href="product.html?id=clubc85">
+                        <div class="product-title">Reebok Club C 85</div>
+                    </a>
+                    <div class="product-price">
+                         
+                        <span class="new-price">₱3,800</span>
+                    </div>
+                </div>
+            </div>
+         
+    </main>
+    
+    <script>
+        // Get HTML elements by their ID   
+        const sortSelect = document.getElementById('sortSelect');
+        const productsGrid = document.getElementById('productsGrid');
+        // Turn the product cards list into an array
+        const productCards = Array.from(productsGrid.getElementsByClassName('product-card'));
+         // Save the original order of the products
+        const defaultOrder = [...productCards];
+            
+        // Function to find and get the price number inside the      card
+        function getPrice(card) {
+            const priceText = card.querySelector('.new-price').innerText;
+            return parseFloat(priceText.replace(/[₱,]/g, '').trim());
+        }
+        /* --- Sort Dropdown  Listener --- */
+        sortSelect.addEventListener('change', function() {
+            const sortBy = this.value;
+            let sortedCards;
+                /* ---  Conditions Logic --- */
+            if (sortBy === 'low-to-high') {
+                sortedCards = [...productCards].sort((a, b) => getPrice(a) - getPrice(b));
+            } else if (sortBy === 'high-to-low') {
+                sortedCards = [...productCards].sort((a, b) => getPrice(b) - getPrice(a));
+            } else {
+                sortedCards = defaultOrder;
+            }
+
+            productsGrid.innerHTML = '';
+            sortedCards.forEach(card => {
+                productsGrid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Everywear | About</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url(image/BgBall.jpg); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-color: #d5c5e0;
+            color: #000000;
+        }
+
+        /* --- Header Navigation --- */
+        .main-header {
+            background-color: #000000b0; 
+            color: #ffffff;
+            padding: 10px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 300px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .header-nav a:hover {
+            color: #cccccc;
+        }
+
+        .logo-image {
+            height: 80px; 
+            width: auto;  
+            display: block;
+            transform: scale(1.5);
+        }
+
+      
+        .contact-link-wrapper {
+            position: relative;
+        }
+
+        .contact-link-wrapper a {
+            position: absolute;
+            left: 30px; 
+            top: 0;
+            white-space: nowrap;
+        }
+        
+        /* --- About Section --- */
+        .about-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #7e6584c0; 
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: #000000;
+        }
+
+        .about-subtitle {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #efd2fe;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #ffffff;
+        }
+
+        .about-list {
+            list-style: none;
+            font-size: 16px;
+            line-height: 2;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            color:  #ffffff;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            /* Tablet View */
+            .header-container { gap: 100px; }
+            .logo-image { height: 65px; }
+            .about-section { margin: 40px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            /* Mobile View */
+            .header-container { gap: 20px; padding: 0 10px; }
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 11px; white-space: nowrap; }
+            .logo-image { height: 50px; }
+            
+            .about-section {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+            .about-title { font-size: 24px; }
+            .about-subtitle { font-size: 18px; margin-top: 20px; }
+            .about-text { font-size: 14px; text-align: left; }
+            .about-list { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+            <!-- Nav bar -->
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <nav class="header-nav">
+                <a href="allitems.html">All Items</a>
+            </nav>
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="image/Kicks.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <a href="about.html">About</a>
+                <span class="contact-link-wrapper">
+                    <a href="contact.html">Contact</a>
+                </span>
+            </nav>
+
+        </div>
+    </header>
+    <!--   about page main content area -->
+     <main class="about-section">
+        <h1 class="about-subtitle">Documenting the Culture of Kicks.</h1>
+        
+        <p class="about-text">
+            Welcome to <strong>Street Everywear</strong>, your ultimate digital archive for sneaker history and street fashion. We believe that sneakers are more than just footwear—they are art pieces, cultural milestones, and symbols of self-expression. We aren't here to sell you shoes; we are here to tell their stories.
+        </p>
+
+        <h2 class="about-subtitle">Our Mission</h2>
+        <p class="about-text">
+            Sneaker culture is rich with history, spanning decades of sports, music, and design innovation. Our mission is to preserve this legacy by providing an in-depth look at the world’s most iconic silhouettes. From the legendary origins of the Air Jordan line to the disruptive designs of modern streetwear staples, we break down the facts behind the hype.
+        </p>
+
+        <h2 class="about-subtitle">What You'll Find Here</h2>
+        <ul class="about-list">
+            <li><strong>Sneaker Histories:</strong> Deep dives into the origins, release dates, and designers behind the most famous shoes.</li>
+            <li> <strong>Design & Innovation:</strong> A closer look at the materials, technology, and artistic vision that brought these sneakers to life.</li>
+            <li> <strong>Cultural Impact:</strong> Exploring how these kicks transcended the basketball courts and skate parks to shape global fashion.</li>
+        </ul>
+    </main>
+
+</body>
+</html>

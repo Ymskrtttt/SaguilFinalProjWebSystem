@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Everywear | Shoe Info</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            background-image: url('image/BgBall.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-color: #d5c5e0;
+            font-family: Arial, Helvetica, sans-serif; 
+            color: #000000;
+        }
+
+        .container { 
+            width: 95%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        a { 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        
+        /* --- Header Navigation --- */
+        .main-header { 
+            background-color: #000000b0; 
+            color: #ffffff; 
+            padding: 1px 0; 
+        }
+
+        .header-container { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 300px;
+        }
+
+        .header-nav { 
+            display: flex; 
+            gap: 30px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+
+        .logo-image { 
+            height: 60px; 
+            width: auto; 
+            display: block;
+            transform: scale(1.5); 
+        }
+
+        /* This will overlay the Contact link without affecting the navbar spacing */
+        .contact-link-wrapper {
+            position: relative;
+        }
+
+        .contact-link-wrapper a {
+            position: absolute;
+            left: 30px; /* This is the exact gap between About and Contact */
+            top: 0;
+            white-space: nowrap;
+        }
+
+        /* --- Informative Article Section --- */
+        .article-section { 
+            display: flex; 
+            gap: 50px; 
+            margin: 50px auto; 
+            background: #ffffff7e; 
+            padding: 50px; 
+            border-radius: 8px; 
+            border: 1px solid #dddddd; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .article-image { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: flex-start;
+        }
+
+        .article-image img { 
+            max-width: 100%; 
+            max-height: 500px; 
+            object-fit: contain; 
+            border-radius: 8px;
+        }
+        
+        .article-info { 
+            flex: 1; 
+        }
+
+        .shoe-title { 
+            font-size: 36px; 
+            font-weight: 900;
+            margin-bottom: 15px; 
+            color: #661c8e;
+            text-transform: uppercase;
+        }
+
+        /* --- Fast Facts Box --- */
+        .quick-facts {
+            background-color: #f9f9f94a;
+            border-left: 4px solid #661c8e;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+        }
+
+        .quick-facts p {
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .quick-facts span {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        /* --- Main Description --- */
+        .shoe-history {
+            font-size: 16px;
+            color: #000000;
+            text-align: justify;
+        }
+
+        .shoe-history p {
+            margin-bottom: 15px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #661c8e;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            /* Tablet View */
+            .header-container { gap: 100px; }
+            .logo-image { height: 65px; }
+            
+            .article-section { 
+                padding: 30px; 
+                gap: 30px; 
+            }
+
+            .products-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px 15px; 
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-container { gap: 20px; padding: 0 10px; }
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 11px; white-space: nowrap; }
+            .logo-image { height: 50px; }
+
+            .article-section {
+                flex-direction: column;
+                margin: 20px 15px;
+                padding: 20px;
+                gap: 20px;
+            }
+            
+            .shoe-title { font-size: 28px; }
+            .article-image img { max-height: 300px; }
+
+            .products-grid { 
+                grid-template-columns: repeat(1, 1fr);
+                gap: 25px 0; 
+                margin: 30px 0;
+            }
+            .product-title { font-size: 16px; }
+            .product-price { font-size: 13px; }
+            .image-wrapper { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <nav class="header-nav">
+                <a href="allitems.html">All Items</a>
+            </nav>
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="image/Kicks.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <a href="about.html">About</a>
+                <span class="contact-link-wrapper">
+                    <a href="contact.html">Contact</a>
+                </span>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="article-section">
+            
+            <div class="article-image">
+                <img id="display-image" src="" alt="Shoe Image">
+            </div>
+
+            <div class="article-info">
+                <h1 id="display-title" class="shoe-title"></h1>
+                
+                <div class="quick-facts">
+                    <p><span>Release Year:</span> <span id="display-year" style="font-weight: normal;">-</span></p>
+                    <p><span>Designer:</span> <span id="display-designer" style="font-weight: normal;">-</span></p>
+                </div>
+
+                <div class="shoe-history">
+                    <p id="display-desc1"></p>
+                    <p id="display-desc2"></p>
+                </div>
+
+                <a href="allitems.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Collection</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // holding data for all individual shoes
+        // this shows if item is clicked in allitems page
+       const shoesDatabase = {
+            "j1chic": { 
+                title: "AIR JORDAN 1 RETRO HIGH OG", 
+                image: "image/J1chic.webp",
+                year: "1985",
+                designer: "Peter Moore",
+                desc1: "The Air Jordan 1 is the shoe that kickstarted sneaker culture. Originally created for Michael Jordan in 1984, it was released to the public in 1985.",
+                desc2: "It gained massive popularity due to the famous 'Banned' story, where the NBA reportedly fined Jordan $5,000 per game for wearing shoes that violated the league's uniform policy."
+            },
+            "j4": { 
+                title: "Nike Air Jordan 4 Retro 'Cozy Girl'", 
+                image: "image/J4.webp",
+                year: "1989",
+                designer: "Tinker Hatfield",
+                desc1: "The Jordan 4 was the first Air Jordan to have a global release. It is known for its unique 'wings' that allow for customized lacing and added support.",
+                desc2: "The 'Cozy Girl' edition features a soft texture and a unique colorway made especially for women who love modern streetwear."
+            },
+            "lbj1": { 
+                title: "LEBRON XXIII ELITE 'GOOD INTENTIONS'", 
+                image: "image/Lbj1.png",
+                year: "2023",
+                designer: "Jason Petrie",
+                desc1: "LeBron James' signature series continues to deliver cutting-edge innovation in basketball performance technology.",
+                desc2: "This model was engineered specifically to support King James' unparalleled strength, speed, and explosive movements on the court."
+            },
+            "adi3": { 
+                title: "Adidas NMD_R1 'Cloud White/Blue'", 
+                image: "image/Adi3.png",
+                year: "2015",
+                designer: "Nic Galway",
+                desc1: "The NMD combined classic Adidas designs (like the Micro Pacer and Boston Super) and gave them a modern, youthful twist.",
+                desc2: "It became incredibly popular for its Boost midsole that feels as soft as a marshmallow, making it extremely comfortable for daily casual wear."
+            },
+            "book2": { 
+                title: "Booker 2 NRG EP", 
+                image: "image/Book2.png",
+                year: "2024",
+                designer: "Nike Basketball",
+                desc1: "Devin Booker's signature shoe line perfectly blends a classic, everyday lifestyle look with modern basketball technology.",
+                desc2: "The 'EP' stands for Engineered Performance, which means it is designed with a more durable outsole built to withstand rougher outdoor courts."
+            },
+            "af1": { 
+                title: "Nike Air Force 1 '07 LV8 Denim", 
+                image: "image/Af1.png",
+                year: "1982",
+                designer: "Bruce Kilgore",
+                desc1: "This was the first basketball shoe to feature Nike Air technology. It was named after Air Force One, the aircraft that carries the President of the United States.",
+                desc2: "This '07 LV8 Denim version offers a premium streetwear feel by utilizing high-quality denim materials across its upper."
+            },
+            "gtcut": { 
+                title: "G.T. CUT 4 WNBA 30TH EP", 
+                image: "image/Gtcut5.png",
+                year: "2024",
+                designer: "Nike Basketball",
+                desc1: "Part of Nike's Greater Than (G.T.) series, this silhouette is designed for players who rely on quick movements, sharp cuts, and lethal crossovers.",
+                desc2: "The WNBA 30th edition is a special tribute celebrating the 30th anniversary of the Women's National Basketball Association."
+            },
+            "adi4": { 
+                title: "Adidas Forum XLG", 
+                image: "image/Adi4.png",
+                year: "1984",
+                designer: "Jacques Chassaing",
+                desc1: "Originally released in 1984 as a premium basketball shoe, it became famous for its signature X-shaped ankle strap that provided exceptional stability.",
+                desc2: "The XLG version is updated with a thicker, chunky sole that perfectly matches Y2K and modern fashion trends."
+            },
+            "ja3": { 
+                title: "Nike Ja 3 “Uncle Phil”", 
+                image: "image/Ja3.png",
+                year: "2024",
+                designer: "Ben Nethongkome",
+                desc1: "Ja Morant's signature line focuses on being incredibly lightweight while supporting high jumps and explosive multi-directional movements.",
+                desc2: "The 'Uncle Phil' colorway features a vibrant design that pays homage to the important figures who supported his basketball journey."
+            },
+            "adi5": { 
+                title: "Adidas Gazelle Bold 'Pink Glow'", 
+                image: "image/Adi5.png",
+                year: "1966",
+                designer: "Adidas Originals",
+                desc1: "One of the most iconic Adidas shoes ever made. It was originally designed for indoor sports before becoming a global staple in casual fashion.",
+                desc2: "The 'Bold' edition is easily recognizable by its triple-stacked sole, giving you an extra boost in height and a stylish edge."
+            },
+            "lf1": { 
+                title: "Nike Total 90 III SP", 
+                image: "image/Lf1.png",
+                year: "2004",
+                designer: "Nike Football",
+                desc1: "One of Nike's most popular football (soccer) boots in the early 2000s, especially favored by lethal strikers around the world.",
+                desc2: "It is widely known for its asymmetric lacing system, which provides a cleaner and wider surface area for striking the ball."
+            },
+            "kobe": { 
+                title: "Kobe 11 Protro Mamba Day", 
+                image: "image/kobe8.png",
+                year: "2016",
+                designer: "Eric Avar",
+                desc1: "The final shoe worn by Kobe Bryant on an NBA court before his retirement. Its original release date was April 13, 2016.",
+                desc2: "The shoe is packed with details representing his legendary 20-year career, and this Protro (Performance Retro) version features upgraded modern cushioning."
+            },
+            "dunkpanda": {
+                title: "Nike Dunk Low 'Panda'",
+                image: "image/Panda.png",
+                year: "2021",
+                designer: "Peter Moore",
+                desc1: "This black-and-white colorway became the defining shoe of its generation due to its simplicity and its ability to match almost any outfit.",
+                desc2: "Even after numerous restocks over the years, it remains an absolute favorite among sneakerheads and everyday casual wearers alike."
+            },
+            "yeezy350": {
+                title: "Adidas Yeezy Boost 350 V2",
+                image: "image/Yeezy.png",
+                year: "2016",
+                designer: "Kanye West",
+                desc1: "One of the most successful collaborations between an artist and a brand. It completely shifted the trajectory of sneaker culture in the 2010s.",
+                desc2: "Featuring a flexible Primeknit upper and full-length Boost cushioning, it is renowned for being incredibly lightweight and comfortable."
+            },
+            "nb550": {
+                title: "New Balance 550",
+                image: "image/Nb550.png",
+                year: "1989",
+                designer: "Steven Smith",
+                desc1: "Originally released as an alternative basketball shoe in the late 80s, it was largely forgotten for decades before making a massive comeback in 2020.",
+                desc2: "Thanks to the highly successful Aimé Leon Dore collaboration, the chunky, retro look of the 550 is now a staple in modern streetwear."
+            },
+            "chuck70": {
+                title: "Converse Chuck 70 Classic",
+                image: "image/Chuck.png",
+                year: "1917",
+                designer: "Marquis Mills Converse",
+                desc1: "Arguably the most recognizable shoe in the world. Originally called 'Non-Skids' before being renamed after Chuck Taylor, the basketball player who popularized it.",
+                desc2: "The Chuck 70 version uses a thicker, premium canvas and a much better insole compared to the regular All-Star, offering superior durability and comfort."
+            },
+            "pumasuede": {
+                title: "Puma Suede Classic",
+                image: "image/Puma.png",
+                year: "1968",
+                designer: "Puma",
+                desc1: "The shoe that changed the footwear game by being the first to predominantly use suede material instead of traditional leather or canvas.",
+                desc2: "It became highly popular in b-boy and hip-hop culture during the 1980s, and eventually became a beloved favorite in the skateboarding community."
+            },
+            "vansoldskool": {
+                title: "Vans Old Skool",
+                image: "image/Vans.png",
+                year: "1977",
+                designer: "Paul Van Doren",
+                desc1: "This was the very first Vans shoe to feature the famous 'Jazz Stripe', which was supposedly just a random doodle sketched by founder Paul Van Doren.",
+                desc2: "It became a favorite among skateboarders and BMX riders due to its rugged suede panels and thick waffle sole that provides excellent grip."
+            },
+            "airmax90": {
+                title: "Nike Air Max 90",
+                image: "image/Airmax.png",
+                year: "1990",
+                designer: "Tinker Hatfield",
+                desc1: "The silhouette that further popularized Nike's 'visible air' technology. It is known for its aggressive, fast-looking design and chunky profile.",
+                desc2: "To this day, its classic 'Infrared' colorway is widely considered by collectors as one of the greatest sneaker color blockings in history."
+            },
+            "stansmith": {
+                title: "Adidas Stan Smith",
+                image: "image/Stansmith.png",
+                year: "1965",
+                designer: "Horst Dassler",
+                desc1: "The most iconic Adidas tennis shoe ever made, officially named after the former world No. 1 American tennis player, Stan Smith.",
+                desc2: "Known for its incredibly clean white leather design and green heel tab. Instead of the traditional three stripes, it features three rows of elegant perforations."
+            },
+            "blazer77": {
+                title: "Nike Blazer Mid '77",
+                image: "image/Blazer.png",
+                year: "1973",
+                designer: "Bill Bowerman",
+                desc1: "One of Nike's earliest basketball shoes. It was named after Portland's local NBA franchise, the Trail Blazers, right around the time Nike was founded.",
+                desc2: "Today, it has transitioned into a favorite lifestyle and skate shoe due to its vintage silhouette and the signature exposed foam on the tongue."
+            },
+            "asicsgel": {
+                title: "Asics Gel-Kayano 14",
+                image: "image/Asics.png",
+                year: "2008",
+                designer: "Hidenori Yamashita",
+                desc1: "A classic running shoe that is currently making a massive comeback as one of the trendiest lifestyle sneakers due to the booming 'Y2K aesthetic'.",
+                desc2: "This shoe was notable for being the first Gel-Kayano not designed by its namesake creator, Toshikazu Kayano, and is praised for its ultra-soft GEL cushioning."
+            },
+            "salomonxt6": {
+                title: "Salomon XT-6",
+                image: "image/Salomon.png",
+                year: "2013",
+                designer: "Benjamin Fain",
+                desc1: "Originally built as a hardcore trail running shoe, specifically designed for ultra-marathoners racing through harsh mountain conditions.",
+                desc2: "It recently gained massive popularity in streetwear and the 'Gorpcore' fashion trend due to its unique quick-lace system and highly durable materials."
+            },
+            "clubc85": {
+                title: "Reebok Club C 85",
+                image: "image/Reebok.png",
+                year: "1985",
+                designer: "Paul Brown",
+                desc1: "The 'C' stands for 'Champion'. It is a classic tennis shoe that was specifically designed to adhere to the strict dress codes of elite tennis clubs.",
+                desc2: "Because of its minimalist look and incredibly soft garment leather, it has remained a staple for vintage fashion enthusiasts for decades."
+            }
+        };
+        
+                /* ---  URL Parameter --- */
+        const urlParams = new URLSearchParams(window.location.search);
+        const shoeId = urlParams.get('id');
+            
+        if (shoeId && shoesDatabase[shoeId]) {
+            const shoe = shoesDatabase[shoeId];
+            /* --- Show  Details --- */
+            document.getElementById('display-image').src = shoe.image;
+            document.getElementById('display-title').innerText = shoe.title;
+            
+            document.getElementById('display-year').innerText = shoe.year;
+            document.getElementById('display-designer').innerText = shoe.designer;
+            
+            document.getElementById('display-desc1').innerText = shoe.desc1;
+            document.getElementById('display-desc2').innerText = shoe.desc2;
+        } else {
+            document.getElementById('display-title').innerText = "Shoe Not Found";
+            document.getElementById('display-desc1').innerText = "Sorry, we don't have information on this shoe yet.";
+        }
+    </script>
+</body>
+</html>

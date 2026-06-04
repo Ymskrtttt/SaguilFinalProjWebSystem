@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Everywear | Creator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url(image/BgBall.jpg); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-color: #d5c5e0;
+            color: #000000;
+        }
+
+        /* --- Header Navigation --- */
+       .main-header {
+            background-color: #000000b0; 
+            color: #ffffff;
+            padding: 1px 0; 
+        }
+
+        .header-container {
+          display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 300px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 30px;
+             font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff; 
+        }
+
+        .header-nav a {
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff; 
+            text-decoration: none;  
+        }
+
+   
+      
+
+        .logo-image {
+            height: 80px; 
+            width: auto;  
+            display: block;
+            transform: scale(1.5);
+        }
+
+        .contact-link-wrapper {
+            position: relative;
+        }
+
+        .contact-link-wrapper a {
+            position: absolute;
+            left: 30px; 
+            top: 0;
+            white-space: nowrap;
+        }
+        
+    
+        .about-section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #7e6584c0; 
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+     .profile-image-wrapper {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- Profile Image Setup --- */
+        .profile-image-wrapper img {
+            width: 200px; 
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: #efd2fe;
+        }
+
+        
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #ffffff;
+        }
+
+        .about-list {
+            list-style: none;
+            font-size: 16px;
+            line-height: 2;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            color:  #ffffff;
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+        }
+
+        /* --- Responsive Design --- */
+       @media (max-width: 900px) {
+            /* Tablet View */
+            .header-container { gap: 100px; }
+            .logo-image { height: 65px; }
+            .about-section { margin: 40px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            /* Mobile View */
+            .header-container { gap: 20px; padding: 0 10px; }
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 11px; white-space: nowrap; }
+            .logo-image { height: 50px; }
+            
+            .about-section {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+            .about-title { font-size: 24px; }
+            .about-subtitle { font-size: 18px; margin-top: 20px; }
+            .about-text { font-size: 14px; text-align: left; }
+            .about-list { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+        <!-- Nav bar -->
+
+   <header class="main-header">
+        <div class="header-container">
+            
+            <nav class="header-nav">
+                <a href="allitems.html">All Items</a>
+            </nav>
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="image/Kicks.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+
+            <nav class="header-nav">
+                <a href="about.html">About</a>
+                <span class="contact-link-wrapper">
+                    <a href="contact.html">Contact</a>
+                </span>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="about-section">
+        
+        <div class="profile-image-wrapper">
+            <img src="image/pogi.png" alt="Kurt Saguil">
+        </div>
+
+        <h1 class="about-title">Kurt Saguil</h1>
+        <p class="about-text">
+            Hi, I'm the developer behind <strong>Street Everywear</strong>. I am currently pursuing my degree in Information Technology at National University. Combining my technical studies with my love for street culture and sneaker technology, I designed this website to serve as an informative hub and digital archive for iconic footwear silhouettes.
+        </p>
+
+        
+
+        <h2 class="about-title">SOCIALS</h2>
+        <p class="about-text" style="text-align: center;">
+            <strong>Email:</strong> KurtSaguil16@gmail.com <br>
+            <strong>Instagram:</strong> ymskrtttt<br>
+            <strong>FaceBook:</strong> Kurt Saguil<br>
+        </p>
+    </main>
+
+</body>
+</html>

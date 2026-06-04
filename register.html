@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Everywear | Signup</title>
+
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            background-color: #fafafa; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-image: url('image/BgBall.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+        }
+
+        .login-container { 
+            background-color: #ffffff7e; 
+            width: 100%; 
+            max-width: 400px; 
+            padding: 40px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            text-align: center; 
+        }
+
+        .login-logo { 
+            margin-bottom: 30px; 
+        }
+
+        .login-logo img { 
+            height: 70px; 
+            width: auto; 
+            transform: scale(1.5);
+        }
+
+        .login-container h2 { 
+            font-size: 24px; 
+            font-weight: bold; 
+            margin-bottom: 10px; 
+            color: #661c8e; 
+        }
+
+        .login-container p { 
+            font-size: 14px; 
+            color: #661c8e; 
+            margin-bottom: 30px; 
+        }
+
+        .input-group { 
+            margin-bottom: 15px; 
+            text-align: left; 
+        }
+
+        .input-group label { 
+            display: block; 
+            font-size: 13px; 
+            font-weight: bold; 
+            margin-bottom: 5px; 
+            color: #661c8e; 
+        }
+
+        .input-group input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            font-size: 14px; 
+            outline: none; 
+            transition: border-color 0.2s; 
+        }
+
+        .input-group input:focus { 
+            border-color: #000; 
+        }
+
+        .login-btn { 
+            width: 100%; 
+            background-color: #661c8e; 
+            color: #ffffff; 
+            border: none; 
+            padding: 14px; 
+            font-size: 14px; 
+            font-weight: bold; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-top: 10px; 
+            transition: background-color 0.2s; 
+        }
+
+       
+
+        .extra-links { 
+            margin-top: 20px; 
+            font-size: 13px; 
+            color: #661c8e; 
+        }
+
+        .extra-links a { 
+            color: #2a2a2a; 
+            font-weight: bold; 
+            text-decoration: none; 
+        }
+
+        .extra-links a:hover { 
+            text-decoration: underline; 
+        }
+          @media (max-width: 900px) {
+            /* Tablet View */
+            .header-container { gap: 100px; }
+            .logo-image { height: 65px; }
+            .about-section { margin: 40px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            /* Mobile View */
+            .header-container { gap: 20px; padding: 0 10px; }
+            .header-nav { gap: 10px; }
+            .header-nav a { font-size: 11px; white-space: nowrap; }
+            .logo-image { height: 50px; }
+            
+            .about-section {
+                margin: 20px 15px;
+                padding: 25px 20px;
+            }
+            .about-title { font-size: 24px; }
+            .about-subtitle { font-size: 18px; margin-top: 20px; }
+            .about-text { font-size: 14px; text-align: left; }
+            .about-list { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-logo">
+            <img src="image/Kicks.png" alt="Elvon Logo">
+        </div>
+        <h2>Create Account</h2>
+        <p>Join our community today.</p>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="input-group">
+                <label for="new-password">Password</label>
+                <input type="password" id="new-password" required>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+
+        <div class="extra-links">
+            Already have an account? <a href="login.html">Log In here</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('new-password').value;
+
+            localStorage.setItem('savedEmail', email);
+            localStorage.setItem('savedPassword', password);
+
+            alert("Account created successfully! You can now log in.");
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>
